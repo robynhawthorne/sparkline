@@ -1,0 +1,11 @@
+sparkplot <- function(dat, trans, xaxis, yaxis, title){
+  
+  # plot the first column 
+  plot(x = 1:nrow(dat), y = dat[,1], type = "l", xlab = xaxis, ylab = yaxis, main = title)
+  
+  for(x in 2:ncol(dat)){
+    
+    # plot columns as transparent lines
+    lines(x = 1:nrow(dat), y = dat[,x], col = rgb(0,0,0,alpha = trans))
+  }
+}
